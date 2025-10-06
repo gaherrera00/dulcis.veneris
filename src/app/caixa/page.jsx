@@ -19,7 +19,9 @@ export default function Page({ usuarioId = 1, lojaId = 1 }) {
 
   // Busca carrinho (venda aberta)
   const fetchCarrinho = async () => {
-    const res = await fetch(`/api/carrinho?usuarioId=${usuarioId}&lojaId=${lojaId}`);
+    const res = await fetch(
+      `/api/carrinho?usuarioId=${usuarioId}&lojaId=${lojaId}`
+    );
     const data = await res.json();
     setCarrinho(data.itens || []);
   };
@@ -63,10 +65,18 @@ export default function Page({ usuarioId = 1, lojaId = 1 }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {produtos.map((produto) => (
-          <Card key={produto.id} className="rounded-2xl shadow-md hover:shadow-lg transition">
+          <Card
+            key={produto.id}
+            className="rounded-2xl shadow-md hover:shadow-lg transition"
+          >
             {produto.img && (
               <div className="relative w-full h-72 overflow-hidden rounded-t-2xl">
-                <Image src={produto.img} alt={produto.nome} fill className="object-cover" />
+                <Image
+                  src={produto.img}
+                  alt={produto.nome}
+                  fill
+                  className="object-cover"
+                />
               </div>
             )}
 
@@ -86,7 +96,10 @@ export default function Page({ usuarioId = 1, lojaId = 1 }) {
                 <span>Custo:</span>
                 <span>R$ {produto.custo.toFixed(2)}</span>
               </div>
-              <Button className="w-full" onClick={() => adicionarAoCarrinho(produto)}>
+              <Button
+                className="w-full"
+                onClick={() => adicionarAoCarrinho(produto)}
+              >
                 Adicionar ao Carrinho
               </Button>
             </CardContent>
@@ -98,19 +111,36 @@ export default function Page({ usuarioId = 1, lojaId = 1 }) {
         <div className="mt-6 p-4 border rounded-lg bg-gray-50">
           <h3 className="text-lg font-bold mb-2">Carrinho</h3>
           {carrinho.map((item) => (
-            <div key={item.id} className="flex justify-between items-center mb-2">
+            <div
+              key={item.id}
+              className="flex justify-between items-center mb-2"
+            >
               <span>
                 {item.produto.nome} x {item.quantidade}
               </span>
               <div className="flex items-center gap-2">
-                <Button size="sm" onClick={() => alterarQuantidade(item.id, item.quantidade - 1)}>
+                <Button
+                  size="sm"
+                  onClick={() =>
+                    alterarQuantidade(item.id, item.quantidade - 1)
+                  }
+                >
                   -
                 </Button>
                 <span>{item.quantidade}</span>
-                <Button size="sm" onClick={() => alterarQuantidade(item.id, item.quantidade + 1)}>
+                <Button
+                  size="sm"
+                  onClick={() =>
+                    alterarQuantidade(item.id, item.quantidade + 1)
+                  }
+                >
                   +
                 </Button>
-                <Button variant="destructive" size="sm" onClick={() => removerDoCarrinho(item.id)}>
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  onClick={() => removerDoCarrinho(item.id)}
+                >
                   Remover
                 </Button>
               </div>

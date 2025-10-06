@@ -5,9 +5,9 @@ const prisma = new PrismaClient();
 
 async function main() {
 
-  const loja = 
-  await prisma.loja.deleteMany()
-  await prisma.loja.createMany({
+  const loja =
+    await prisma.loja.deleteMany()
+    await prisma.loja.createMany({
     data: [
       {
         nome: "Dulcis Veneris",
@@ -20,12 +20,38 @@ async function main() {
     ],
   });
 
-  const Usuario = 
-  await prisma.usuario.deleteMany()
+  const Usuario =
+    await prisma.usuario.deleteMany()
   await prisma.usuario.createMany({
     data: [
       {
-        
+        nome: "Gabriel",
+        cpf: "111.111.111-11",
+        email: "gabriel@email.com",
+        senha: "senha123",
+        telefone: "(11)11111-1111",
+        perfil: "ADMIN",
+        loja_id: 1,
+
+      },
+      {
+        nome: "Gustavo",
+        cpf: "222.222.222-22",
+        email: "gustavo@email.com",
+        senha: "senha123",
+        telefone: "(22)22222-2222",
+        perfil: "GERENTE",
+        loja_id: 1,
+
+      },
+      {
+        nome: "Henry",
+        cpf: "333.333.333-33",
+        email: "henry@email.com",
+        senha: "senha123",
+        telefone: "(33)33333-3333",
+        perfil: "FUNCIONARIO",
+        loja_id: 1,
       },
     ],
   })
@@ -34,11 +60,11 @@ async function main() {
   await prisma.produto.deleteMany()
   await prisma.produto.createMany({
     data: [
-        {
+      {
         sku: "SKU001",
         codigo: "COD001",
         nome: "Clássicos",
-        descricao: "A linha Clássicos Dulce Venere representa a essência e a tradição da marca, sendo os verdadeiros carros-chefe e os mais vendidos do nosso portfólio. Reúne os sabores que encantam diferentes paladares e atravessam gerações. Composta pelo Chocolate ao Leite, cremoso e equilibrado; o Chocolate Meio-Amargo 70% Cacau, intenso e sofisticado; e o Chocolate Branco, delicado e aveludado, essa seleção foi criada para oferecer experiências únicas em cada mordida. Uma verdadeira celebração do cacau em suas formas mais apreciadas, unindo tradição, qualidade e prazer em cada detalhe.", 
+        descricao: "A linha Clássicos Dulce Venere representa a essência e a tradição da marca, sendo os verdadeiros carros-chefe e os mais vendidos do nosso portfólio. Reúne os sabores que encantam diferentes paladares e atravessam gerações. Composta pelo Chocolate ao Leite, cremoso e equilibrado; o Chocolate Meio-Amargo 70% Cacau, intenso e sofisticado; e o Chocolate Branco, delicado e aveludado, essa seleção foi criada para oferecer experiências únicas em cada mordida. Uma verdadeira celebração do cacau em suas formas mais apreciadas, unindo tradição, qualidade e prazer em cada detalhe.",
         img: "/catalogo/chocolates.png",
         preco_venda: 40.0,
         custo: 70.0,
@@ -54,7 +80,7 @@ async function main() {
         custo: 90.0,
         categoria: "Chocolates",
       },
-       {
+      {
         sku: "SKU003",
         codigo: "COD003",
         nome: "Chocolate Cecilia",
@@ -64,7 +90,7 @@ async function main() {
         custo: 95.0,
         categoria: "Chocolates",
       },
-        {
+      {
         sku: "SKU004",
         codigo: "COD004",
         nome: "Chocolate Expresso",
@@ -74,7 +100,7 @@ async function main() {
         custo: 95.0,
         categoria: "Chocolates",
       },
-       {
+      {
         sku: "SKU005",
         codigo: "COD005",
         nome: "Chocolate Caramelo & Flor de Sal Dulce Venere",
@@ -84,7 +110,7 @@ async function main() {
         custo: 80.0,
         categoria: "Chocolates",
       },
-        {
+      {
         sku: "SKU006",
         codigo: "COD006",
         nome: "Chocolate Branco com Frutas Vermelhas Dulce Venere",
@@ -94,7 +120,7 @@ async function main() {
         custo: 80.0,
         categoria: "Chocolates",
       },
-       {
+      {
         sku: "SKU007",
         codigo: "COD007",
         nome: "Chocolate ao Leite com Avelã Dulce Venere",
@@ -104,7 +130,7 @@ async function main() {
         custo: 80.0,
         categoria: "Chocolates",
       },
-        {
+      {
         sku: "SKU008",
         codigo: "COD008",
         nome: "Chocolate ao Leite com Maracujá Dulce Venere",
@@ -114,7 +140,7 @@ async function main() {
         custo: 80.0,
         categoria: "Chocolates",
       },
-         {
+      {
         sku: "SKU009",
         codigo: "COD009",
         nome: "Chocolate ao Leite com Pistache Dulce Venere",
@@ -122,9 +148,9 @@ async function main() {
         img: "/catalogo/chocolate11.png",
         preco_venda: 45.0,
         custo: 80.0,
-        categoria:"Chocolates",
+        categoria: "Chocolates",
       },
-         {
+      {
         sku: "SKU010",
         codigo: "COD010",
         nome: "Chocolate ao Leite com Baunilha Dulce Venere",
@@ -132,9 +158,9 @@ async function main() {
         img: "/catalogo/chocolate12.png",
         preco_venda: 45.0,
         custo: 80.0,
-        categoria:"Chocolates",
+        categoria: "Chocolates",
       },
-         {
+      {
         sku: "SKU011",
         codigo: "COD011",
         nome: "Chocolate ao Leite com Coco Dulce Venere",
@@ -142,9 +168,9 @@ async function main() {
         img: "/catalogo/chocolate13.png",
         preco_venda: 45.0,
         custo: 80.0,
-        categoria:"Chocolates",
+        categoria: "Chocolates",
       },
-        {
+      {
         sku: "SKU012",
         codigo: "COD012",
         nome: "Chocolate ao Leite com Amendoim Dulce Venere",
@@ -152,9 +178,9 @@ async function main() {
         img: "/catalogo/chocolate14.png",
         preco_venda: 45.0,
         custo: 80.0,
-        categoria:"Chocolates",
+        categoria: "Chocolates",
       },
-          {
+      {
         sku: "SKU013",
         codigo: "COD013",
         nome: "Chocolate ao Leite com Doce de Leite Dulce Venere",
@@ -162,9 +188,9 @@ async function main() {
         img: "/catalogo/chocolate15.png",
         preco_venda: 45.0,
         custo: 80.0,
-        categoria:"Chocolates",
+        categoria: "Chocolates",
       },
-         {
+      {
         sku: "SKU014",
         codigo: "COD014",
         nome: "Chocolate ao Leite com Cheesecake de Morango Dulce Venere",
@@ -172,9 +198,9 @@ async function main() {
         img: "/catalogo/chocolate16.png",
         preco_venda: 45.0,
         custo: 80.0,
-        categoria:"Chocolates",
+        categoria: "Chocolates",
       },
-        {
+      {
         sku: "SKU015",
         codigo: "COD015",
         nome: "Chocolate ao Leite com Recheio Cremoso e Crocante de Kinder Bueno Dulce Venere",
@@ -182,7 +208,7 @@ async function main() {
         img: "/catalogo/chocolate17.png",
         preco_venda: 45.0,
         custo: 80.0,
-        categoria:"Chocolates",
+        categoria: "Chocolates",
       },
       {
         sku: "SKU016",
@@ -192,7 +218,7 @@ async function main() {
         img: "/catalogo/paomel1.png",
         preco_venda: 35.0,
         custo: 20.0,
-        categoria:"paes-de-mel",
+        categoria: "paes-de-mel",
       },
       {
         sku: "SKU017",
@@ -202,7 +228,7 @@ async function main() {
         img: "/catalogo/paomel2.png",
         preco_venda: 35.0,
         custo: 20.0,
-        categoria:"paes-de-mel",
+        categoria: "paes-de-mel",
       },
       {
         sku: "SKU018",
@@ -212,7 +238,7 @@ async function main() {
         img: "/catalogo/paomel3.png",
         preco_venda: 35.0,
         custo: 20.0,
-        categoria:"paes-de-mel",
+        categoria: "paes-de-mel",
       },
       {
         sku: "SKU019",
@@ -222,9 +248,9 @@ async function main() {
         img: "/catalogo/paomel4.png",
         preco_venda: 35.0,
         custo: 20.0,
-        categoria:"paes-de-mel",
+        categoria: "paes-de-mel",
       },
-       {
+      {
         sku: "SKU020",
         codigo: "COD020",
         nome: "Pão de Mel de Nutella",
@@ -232,9 +258,9 @@ async function main() {
         img: "/catalogo/paomel5.png",
         preco_venda: 35.0,
         custo: 20.0,
-        categoria:"paes-de-mel",
+        categoria: "paes-de-mel",
       },
-       {
+      {
         sku: "SKU021",
         codigo: "COD021",
         nome: "Kit Degustação",
@@ -242,9 +268,9 @@ async function main() {
         img: "/catalogo/menud.png",
         preco_venda: 65.0,
         custo: 38.0,
-        categoria:"paes-de-mel",
+        categoria: "paes-de-mel",
       },
-       {
+      {
         sku: "SKU022",
         codigo: "COD022",
         nome: "Embalagem 15 pães de mel, Nectar Veneris",
@@ -252,7 +278,7 @@ async function main() {
         img: "/catalogo/paesmelembalagem.png",
         preco_venda: 200.0,
         custo: 100.0,
-        categoria:"paes-de-mel",
+        categoria: "paes-de-mel",
       },
       {
         sku: "SKU023",
@@ -262,7 +288,7 @@ async function main() {
         img: "/catalogo/trufas.png",
         preco_venda: 20.0,
         custo: 10.0,
-        categoria:"Trufas",
+        categoria: "Trufas",
       },
       {
         sku: "SKU024",
@@ -272,7 +298,7 @@ async function main() {
         img: "/catalogo/trufa1.png",
         preco_venda: 20.0,
         custo: 10.0,
-        categoria:"Trufas",
+        categoria: "Trufas",
       },
       {
         sku: "SKU025",
@@ -282,9 +308,9 @@ async function main() {
         img: "/catalogo/trufa2.png",
         preco_venda: 20.0,
         custo: 10.0,
-        categoria:"Trufas",
+        categoria: "Trufas",
       },
-       {
+      {
         sku: "SKU026",
         codigo: "COD026",
         nome: "Trufa de Laranja e Cardamomo",
@@ -292,7 +318,7 @@ async function main() {
         img: "/catalogo/trufa3.png",
         preco_venda: 20.0,
         custo: 10.0,
-        categoria:"Trufas",
+        categoria: "Trufas",
       },
       {
         sku: "SKU027",
@@ -302,7 +328,7 @@ async function main() {
         img: "/catalogo/trufa4.png",
         preco_venda: 20.0,
         custo: 10.0,
-        categoria:"Trufas",
+        categoria: "Trufas",
       },
       {
         sku: "SKU028",
@@ -312,9 +338,9 @@ async function main() {
         img: "/catalogo/trufa5.png",
         preco_venda: 20.0,
         custo: 10.0,
-        categoria:"Trufas",
+        categoria: "Trufas",
       },
-        {
+      {
         sku: "SKU029",
         codigo: "COD029",
         nome: "Cookie de Chocolate Amargo e Flor de Sal",
@@ -322,7 +348,7 @@ async function main() {
         img: "/catalogo/bolacha1.png",
         preco_venda: 30.0,
         custo: 18.0,
-        categoria:"Bolachas",
+        categoria: "Bolachas",
       },
       {
         sku: "SKU030",
@@ -332,7 +358,7 @@ async function main() {
         img: "/catalogo/bolacha2.png",
         preco_venda: 30.0,
         custo: 18.0,
-        categoria:"Bolachas",
+        categoria: "Bolachas",
       },
       {
         sku: "SKU031",
@@ -342,7 +368,7 @@ async function main() {
         img: "/catalogo/bolacha3.png",
         preco_venda: 30.0,
         custo: 18.0,
-        categoria:"Bolachas",
+        categoria: "Bolachas",
       },
       {
         sku: "SKU032",
@@ -351,8 +377,8 @@ async function main() {
         descricao: "Aqueça a alma com a nossa Bolacha de Gengibre e Especiarias. Uma bolacha crocante por fora e macia por dentro, infundida com o calor reconfortante do gengibre, canela, cravo e noz-moscada. Cada mordida é uma explosão de aromas e sabores que remetem a momentos especiais e aconchegantes. Perfeita para harmonizar com um chá ou café, esta bolacha é uma celebração das especiarias e da tradição, com um toque de elegância.",
         img: "/catalogo/bolacha4.png",
         preco_venda: 30.0,
-        custo: 18.0, 
-        categoria:"Bolachas",
+        custo: 18.0,
+        categoria: "Bolachas",
       },
       {
         sku: "SKU033",
@@ -361,15 +387,15 @@ async function main() {
         descricao: "Nossas Bolachinhas Recheadas de Doce de Leite com Especiarias são uma celebração do sabor e da elegância. Cada bolachinha, feita artesanalmente, é delicadamente recheada com um doce de leite cremoso, enriquecido por um toque sutil de especiarias. Embaladas com carinho em um pote de vidro, elas são a escolha perfeita para um momento intimo ou como um presente que encanta pela sofisticação e pelo sabor inesquecível.",
         img: "/catalogo/bolachas.png",
         preco_venda: 150.0,
-        custo: 100.0, 
-        categoria:"Bolachas",
+        custo: 100.0,
+        categoria: "Bolachas",
       },
-     
 
-    
+
+
 
     ],
-    
+
   });
 
   console.log("Seed concluída!");
